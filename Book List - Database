@@ -1,0 +1,15 @@
+---- Create a Book List
+
+CREATE TABLE book (
+    id INTEGER PRIMARY KEY, 
+    name TEXT, 
+    rating INTEGER
+);
+
+INSERT INTO book VALUES (1, "Harry Potter", 4);
+INSERT INTO book VALUES (2, "Games of Thrones", 1);
+INSERT INTO book VALUES (3, "Camaleon", 1);
+
+---- Display Book List
+SELECT * FROM book;
+
