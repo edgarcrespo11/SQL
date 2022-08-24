@@ -6,10 +6,16 @@ CREATE TABLE book (
     rating INTEGER
 );
 
+
+---- Write 3 favorite books 
+
 INSERT INTO book VALUES (1, "Harry Potter", 4);
 INSERT INTO book VALUES (2, "Games of Thrones", 1);
 INSERT INTO book VALUES (3, "Camaleon", 1);
 
+
+
 ---- Display Book List
+
 SELECT * FROM book;
 
