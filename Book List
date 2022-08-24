@@ -7,7 +7,7 @@ CREATE TABLE book (
 );
 
 
----- Write 3 favorite books 
+---- 3 favorite books 
 
 INSERT INTO book VALUES (1, "Harry Potter", 4);
 INSERT INTO book VALUES (2, "Games of Thrones", 1);
