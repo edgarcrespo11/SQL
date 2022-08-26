@@ -1,5 +1,5 @@
 # SQL
 Edgar Crespo's SQL Portfolio 
 
-Welcome to my SQL Portfolio! This code repository contains examples of SQL I've written. Feel free to take a look and reach out if you have any questions: charlotte@breakintotech.academy
+Welcome to my SQL Portfolio! This code repository contains examples of SQL I've written. Feel free to take a look and reach out if you have any questions: edgarcrespo11@gmail.com
 
