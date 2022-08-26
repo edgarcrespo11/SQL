@@ -1,0 +1,88 @@
+---- Create an Online Store
+
+CREATE TABLE swimshop (
+    id INTEGER PRIMARY KEY, 
+    item INTEGER, 
+    name TEXT,
+    quantity_stock INTEGER, 
+    quantity_onlinestore INTEGER,
+    price INTEGER);
+
+
+---- 15 Items to sell
+
+INSERT INTO swimshop VALUES (
+    1, 101, "googles", 20, 10, 25.99);
+INSERT INTO swimshop VALUES (
+    2, 102, "silicone cap", 20, 10, 20.99);
+INSERT INTO swimshop VALUES (
+    3, 103, "parka", 20, 10, 150.00);
+INSERT INTO swimshop VALUES (
+    4, 104, "kickboard", 20, 10, 45.99);
+INSERT INTO swimshop VALUES (
+    5, 105, "pullbouy", 20, 10, 35.99);
+INSERT INTO swimshop VALUES (
+    6, 106, "paddles", 20, 10, 30.99);
+INSERT INTO swimshop VALUES (
+    7, 107, "straps for googles", 20, 10,
+    11.99);
+INSERT INTO swimshop VALUES (
+    8, 108, "bottle", 20, 10, 10.99);
+INSERT INTO swimshop VALUES (
+    9, 109, "nose clip", 20, 10, 5.99);
+INSERT INTO swimshop VALUES (
+    10, 1010, "stopwatch", 20, 10, 50.99);
+INSERT INTO swimshop VALUES (
+    11, 1011, "t-shirt", 20, 10, 20.00);
+INSERT INTO swimshop VALUES (
+    12, 1012, "short", 20, 10, 15.00);
+INSERT INTO swimshop VALUES (
+    13, 1013, "cords", 20, 10, 85.99);
+INSERT INTO swimshop VALUES (
+    14, 1014, "backpack", 20, 10, 105.99);
+INSERT INTO swimshop VALUES (
+    15, 1015, "latex cap", 20, 10, 18.99);
+
+
+---- Display the Online Store Database
+
+SELECT * FROM swimshop;
+
+
+---- How many items do we have in the Online Store?
+
+SELECT SUM (quantity_onlinestore) 
+FROM swimshop;
+
+
+---- How many items do we have in Stock?
+
+SELECT MAX (quantity_stock)
+FROM swimshop;
+
+
+---- How many items do we have in the Online Store that the item number is greater than 1000?
+
+SELECT SUM (quantity_onlinestore)
+FROM swimshop
+WHERE item > 1000;
+
+
+---- How many items do we have in the Online Store that the item number is lesser than 1000?
+SELECT SUM (quantity_onlinestore)
+FROM swimshop
+WHERE item < 1000;
+
+
+---- How many items do we have in the Online Store that are greater than $100.00?
+SELECT SUM (quantity_onlinestore)
+FROM swimshop
+WHERE price > 100.00;
+
+
+---- How many items do we have in the Online Store that are lesser than $50.00 and the item number is greater than 1000?
+SELECT SUM (quantity_onlinestore)
+FROM swimshop
+WHERE price < 50.00
+AND item > 1000;
+
