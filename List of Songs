@@ -8,6 +8,9 @@ CREATE TABLE songs (
     duration INTEGER,
     released INTEGER);
     
+    
+---- List of Songs
+
 INSERT INTO songs (title, artist, mood, duration, released)
     VALUES ("Bohemian Rhapsody", "Queen", "epic", 60, 1975);
 INSERT INTO songs (title, artist, mood, duration, released)
