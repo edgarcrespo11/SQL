@@ -1,4 +1,4 @@
----- Create a To Do List
+---- Create a To Do List ----
 
 CREATE TABLE todo_list (
   id INTEGER PRIMARY KEY, 
@@ -7,7 +7,7 @@ CREATE TABLE todo_list (
 );
 
 
----- To Do List
+---- To Do List ----
 
 INSERT INTO todo_list VALUES (
   1, "Wash the dishes", 15);
@@ -19,6 +19,8 @@ INSERT INTO todo_list VALUES (
   4, "estimated minutes", 65);
 
 
----- How many minutes would it take to do the entire To Do List?
+---- SUM of minutes it will take to do all of the items on your TODO list ----
 
-SELECT SUM(minutes) FROM todo_list;
+SELECT SUM(minutes) 
+FROM todo_list;
+
