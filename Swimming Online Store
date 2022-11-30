@@ -1,4 +1,4 @@
----- Create an Online Store
+---- Create an Online Store ----
 
 CREATE TABLE swimshop (
     id INTEGER PRIMARY KEY, 
@@ -9,7 +9,7 @@ CREATE TABLE swimshop (
     price INTEGER);
 
 
----- 15 Items to sell
+---- 15 Items to sell -----
 
 INSERT INTO swimshop VALUES (
     1, 101, "googles", 20, 10, 25.99);
@@ -44,43 +44,46 @@ INSERT INTO swimshop VALUES (
     15, 1015, "latex cap", 20, 10, 18.99);
 
 
----- Display the Online Store Database
+---- Display the Online Store Database ----
 
 SELECT * FROM swimshop;
 
 
----- How many items do we have in the Online Store?
+---- How many items do we have in the Online Store? ----
 
 SELECT SUM (quantity_onlinestore) 
 FROM swimshop;
 
 
----- How many items do we have in Stock?
+---- How many items do we have in Stock? ---- 
 
 SELECT MAX (quantity_stock)
 FROM swimshop;
 
 
----- How many items do we have in the Online Store that the item number is greater than 1000?
+---- How many items do we have in the Online Store that the item number is greater than 1000? ----
 
 SELECT SUM (quantity_onlinestore)
 FROM swimshop
 WHERE item > 1000;
 
 
----- How many items do we have in the Online Store that the item number is lesser than 1000?
+---- How many items do we have in the Online Store that the item number is lesser than 1000? ----
+
 SELECT SUM (quantity_onlinestore)
 FROM swimshop
 WHERE item < 1000;
 
 
----- How many items do we have in the Online Store that are greater than $100.00?
+---- How many items do we have in the Online Store that are greater than $100.00? ---- 
+
 SELECT SUM (quantity_onlinestore)
 FROM swimshop
 WHERE price > 100.00;
 
 
----- How many items do we have in the Online Store that are lesser than $50.00 and the item number is greater than 1000?
+---- How many items do we have in the Online Store that are lesser than $50.00 and the item number is greater than 1000? ----
+
 SELECT SUM (quantity_onlinestore)
 FROM swimshop
 WHERE price < 50.00
