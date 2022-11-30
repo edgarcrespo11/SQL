@@ -1,4 +1,4 @@
----- Create a table to store your list of books. It should have columns for id, name, and rating.
+---- Create a table to store your list of books. It should have columns for id, name, and rating. ----
 
 CREATE TABLE book (
     id INTEGER PRIMARY KEY, 
@@ -7,12 +7,14 @@ CREATE TABLE book (
 );
 
 
+---- Add three of your favorite books into the table. ----
+
 INSERT INTO book VALUES (1, "Harry Potter", 4);
 INSERT INTO book VALUES (2, "Games of Thrones", 1);
 INSERT INTO book VALUES (3, "Camaleon", 1);
 
 
----- Display Book List
+---- Display Book List ----
 
 SELECT * FROM book;
 
