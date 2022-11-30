@@ -24,8 +24,7 @@ INSERT INTO swimshop VALUES (
 INSERT INTO swimshop VALUES (
     6, 106, "paddles", 20, 10, 30.99);
 INSERT INTO swimshop VALUES (
-    7, 107, "straps for googles", 20, 10,
-    11.99);
+    7, 107, "straps for googles", 20, 10, 11.99);
 INSERT INTO swimshop VALUES (
     8, 108, "bottle", 20, 10, 10.99);
 INSERT INTO swimshop VALUES (
