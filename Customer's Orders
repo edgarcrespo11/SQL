@@ -1,0 +1,44 @@
+---- Create 2 Tables: Table 1 - Customers, Table 2 - Orders
+
+CREATE TABLE customers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    email TEXT);
+    
+INSERT INTO customers (name, email) VALUES ("Doctor Who", "doctorwho@timelords.com");
+INSERT INTO customers (name, email) VALUES ("Harry Potter", "harry@potter.com");
+INSERT INTO customers (name, email) VALUES ("Captain Awesome", "captain@awesome.com");
+
+CREATE TABLE orders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    customer_id INTEGER,
+    item TEXT,
+    price REAL);
+
+INSERT INTO orders (customer_id, item, price)
+    VALUES (1, "Sonic Screwdriver", 1000.00);
+INSERT INTO orders (customer_id, item, price)
+    VALUES (2, "High Quality Broomstick", 40.00);
+INSERT INTO orders (customer_id, item, price)
+    VALUES (1, "TARDIS", 1000000.00);
+
+---- Display a Join Table that shows a list with the name and email of every customer followed by the item and price of orders they've made. 
+Use **LEFT OUTER JOIN** so that a customer is listed even if they've made no orders. DO NOT USE ORDER BY ----
+
+SELECT c.name, c.email, o.item, o.price
+FROM customers AS c
+LEFT OUTER JOIN orders AS o
+ON c.id = o.customer_id;
+
+
+---- Display a Join Table that will result in one row per each customer, with their name, email, and total amount of money they've spent on orders. 
+Sort the rows according to the total money spent, from the most spent to the least spent. 
+(GROUP BY what on the column that is most likely to be unique in a row) ----
+
+SELECT c.name, c.email, sum(o.price) AS spent
+FROM customers AS c
+LEFT OUTER JOIN orders AS o
+ON c.id = o.customer_id
+GROUP BY c.name
+ORDER BY spent DESC;
+
