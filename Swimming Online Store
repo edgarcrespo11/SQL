@@ -6,7 +6,8 @@ CREATE TABLE swimshop (
     name TEXT,
     quantity_stock INTEGER, 
     quantity_onlinestore INTEGER,
-    price INTEGER);
+    price INTEGER
+);
 
 
 ---- 15 Items to sell -----
