@@ -1,4 +1,4 @@
----- Create an Artists List
+---- Table Given ----
 
 CREATE TABLE artists (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -6,9 +6,6 @@ CREATE TABLE artists (
     country TEXT,
     genre TEXT
 );
-
-
----- Artists List
 
 INSERT INTO artists (name, country, genre) VALUES (
     "Taylor Swift", "US", "Pop");
@@ -54,8 +51,9 @@ WHERE genre = 'Pop';
 
 SELECT title 
 FROM songs 
-WHERE artist IN 
-    (SELECT name
-    FROM artists
-    WHERE genre = "Pop");
+WHERE artist 
+IN (
+  SELECT name
+  FROM artists
+  WHERE genre = "Pop");
 
