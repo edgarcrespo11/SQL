@@ -1,4 +1,4 @@
----- Create a Student Gradebook Table ---- 
+---- Table Given ---- 
 
 CREATE TABLE student_grades (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
