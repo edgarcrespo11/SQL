@@ -1,4 +1,4 @@
----- Movies Table given ----
+---- Table Given ----
 
 CREATE TABLE movies (
   id INTEGER PRIMARY KEY, 
@@ -22,7 +22,8 @@ INSERT INTO movies VALUES (
  
 ---- Display List of all movies ----
 
-SELECT * FROM movies;
+SELECT * 
+FROM movies;
 
 
 ---- Display only the movies that were released in the year 2000 or later, not before. 
