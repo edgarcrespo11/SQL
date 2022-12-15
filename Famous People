@@ -1,0 +1,78 @@
+---- Create your own table with some small set of “famous people”, then make more tables about movies they have done together ----
+
+CREATE TABLE famous_people (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER
+);
+
+
+INSERT INTO famous_people (fullname, age) VALUES
+    ("Humphrey Bogart", "101");
+INSERT INTO famous_people (fullname, age) VALUES
+    ("John Krasinski", "45");
+INSERT INTO famous_people (fullname, age) VALUES
+    ("Lauren Bacall", "35");
+INSERT INTO famous_people (fullname, age) VALUES
+    ("Emily Blunt", "85");
+INSERT INTO famous_people (fullname, age) VALUES
+    ("Melissa McCarthy", "35");
+INSERT INTO famous_people (fullname, age) VALUES
+    ("Ben Falcone", "40");
+
+
+
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    movie TEXT
+);
+
+
+INSERT INTO movies (person_id, movie) VALUES
+    (1, "Key Largo");
+INSERT INTO movies (person_id, movie) VALUES
+    (2, "A Quiet Place");
+INSERT INTO movies (person_id, movie) VALUES
+    (3, "Key Largo");
+INSERT INTO movies (person_id, movie) VALUES
+    (4, "A Quiet Place");
+INSERT INTO movies (person_id, movie) VALUES
+    (5, "Bridesmaids");
+INSERT INTO movies (person_id, movie) VALUES
+    (6, "Bridesmaids");
+
+
+
+CREATE table partners (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person1_id INTEGER,
+    person2_id INTEGER
+);
+
+
+INSERT INTO partners (person1_id, person2_id) VALUES
+    (1, 3);
+INSERT INTO partners (person1_id, person2_id) VALUES
+    (2, 4);
+INSERT INTO partners (person1_id, person2_id) VALUES
+    (5, 6);
+
+
+
+---- Display a Join Table that shows a list with the name and movies of the actors ----
+
+SELECT fp.fullname AS ACTOR, m.movie AS MOVIE
+FROM famous_people AS fp
+JOIN movies AS m
+ON fp.id = person_id;
+
+
+---- Display a Join Table that shows a list with the actor's name and their partners as Actor's spouse from the same movie they have acted together ----
+
+SELECT a.fullname AS ACTOR, b.fullname AS SPOUSE_ACTOR
+FROM partners
+JOIN famous_people a
+ON a.id = person1_id
+JOIN famous_people b
+ON b.id = person2_id;
