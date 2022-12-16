@@ -1,0 +1,46 @@
+---- Display a query with PostgreSQL joining tables  ----
+
+SELECT cbtnp.show_id, cbtnp.director
+FROM "CharlotteChaze/BreakIntoTech"."netflix_people" AS cbtnp
+LEFT JOIN "CharlotteChaze/BreakIntoTech"."netflix_titles_info" AS cbtnti
+ON cbtnp.show_id = cbtnti.show_id;
+
+
+---- How many movie titles are there in the database? (movies only, not tv shows) ----
+
+SELECT COUNT(*) AS Movies
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+WHERE type = 'Movie';
+
+
+---- When was the most recent batch of tv shows and/or movies added to the database? ----
+
+SELECT MAX(date(date_added)) AS Recent_In_Database
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info";
+
+
+---- List all the movies and tv shows in alphabetical order. ----
+
+SELECT title
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+ORDER BY title ASC;
+
+
+---- Who was the Director for the movie Bright Star? ----
+
+SELECT np.director
+FROM "CharlotteChaze/BreakIntoTech"."netflix_people" AS np
+JOIN "CharlotteChaze/BreakIntoTech"."netflix_titles_info" AS ti
+ON np.show_id = ti.show_id
+WHERE ti.title = 'Bright Star';
+
+
+---- What is the oldest movie in the database and what year was it made? ----
+
+SELECT title, release_year
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+WHERE type = 'Movie'
+ORDER BY release_year ASC 
+LIMIT 1;
+
+
